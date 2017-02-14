@@ -1,5 +1,5 @@
 # Kuratube
-A reddit like website to find interesting youtube channels | School Project
+A curation website to find interesting youtube channels | School Project
 
 ## Requirements
 - Symphony `3.2.*`
