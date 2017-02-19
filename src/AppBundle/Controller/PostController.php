@@ -45,6 +45,9 @@ class PostController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            // Add the current logged in user as the author of the post
+            $userId = $this->get('security.token_storage')->getToken()->getUser()->getId();
+            $post->setAuthor($userId);
             $em->persist($post);
             $em->flush($post);
 

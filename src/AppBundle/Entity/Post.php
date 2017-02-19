@@ -186,5 +186,11 @@ class Post
     {
         return $this->channel;
     }
+
+    public function __construct()
+    {
+        // Automatically set 0 points on new post
+        $this->points = 0;
+    }
 }
 
