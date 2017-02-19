@@ -16,7 +16,7 @@ class PostVoter extends Voter
     protected function supports($attribute, $subject)
     {
         // if the attribute isn't one we support, return false
-        if (!in_array($attribute, array(self::VIEW, self::EDIT))) {
+        if (!in_array($attribute, array(self::VIEW, self::EDIT, self::DELETE))) {
             return false;
         }
 
@@ -46,6 +46,8 @@ class PostVoter extends Voter
                 return $this->canView($post, $user);
             case self::EDIT:
                 return $this->canEdit($post, $user);
+            case self::DELETE:
+                return $this->canDelete($post, $user);
         }
 
         throw new \LogicException('This code should not be reached!');
