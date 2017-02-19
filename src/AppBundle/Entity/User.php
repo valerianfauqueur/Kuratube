@@ -6,6 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * User
@@ -15,6 +16,11 @@ use Symfony\Component\Security\Core\User\UserInterface;
  */
 class User implements UserInterface, \Serializable
 {
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Post", mappedBy="author")
+     */
+    private $posts;
+
     /**
      * @var int
      *
@@ -176,6 +182,11 @@ class User implements UserInterface, \Serializable
     public function getUsername()
     {
         return $this->username;
+    }
+
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
     }
 }
 
