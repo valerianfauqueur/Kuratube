@@ -5,7 +5,8 @@ namespace AppBundle\Controller;
 use AppBundle\Entity\Post;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Post controller.
@@ -68,6 +69,7 @@ class PostController extends Controller
      */
     public function showAction(Post $post)
     {
+        $this->denyAccessUnlessGranted('view', $post);
         $deleteForm = $this->createDeleteForm($post);
 
         return $this->render('post/show.html.twig', array(
@@ -84,6 +86,8 @@ class PostController extends Controller
      */
     public function editAction(Request $request, Post $post)
     {
+        $this->denyAccessUnlessGranted('edit', $post);
+
         $deleteForm = $this->createDeleteForm($post);
         $editForm = $this->createForm('AppBundle\Form\PostType', $post);
         $editForm->handleRequest($request);
@@ -109,6 +113,7 @@ class PostController extends Controller
      */
     public function deleteAction(Request $request, Post $post)
     {
+        $this->denyAccessUnlessGranted('delete', $post);
         $form = $this->createDeleteForm($post);
         $form->handleRequest($request);
 
