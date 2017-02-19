@@ -16,7 +16,13 @@ $ cd project-symfony
 $ composer install
 ```
 
-#### How to start the server ?
+Then start your MySQL server and initialize the database with the following command
+```shell
+$ php bin/console doctrine:database:create
+$ php bin/console doctrine:schema:update --force
+```
+
+Finally start the server 
 
 ```shell
 $ php bin/console server:run
