@@ -47,8 +47,8 @@ class PostController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             // Add the current logged in user as the author of the post
-            $userId = $this->get('security.token_storage')->getToken()->getUser()->getId();
-            $post->setAuthor($userId);
+            $user = $this->get('security.token_storage')->getToken()->getUser();
+            $post->setAuthor($user);
             $em->persist($post);
             $em->flush($post);
 
@@ -114,6 +114,7 @@ class PostController extends Controller
     public function deleteAction(Request $request, Post $post)
     {
         $this->denyAccessUnlessGranted('delete', $post);
+
         $form = $this->createDeleteForm($post);
         $form->handleRequest($request);
 
