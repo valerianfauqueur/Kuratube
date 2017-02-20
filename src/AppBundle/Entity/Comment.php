@@ -10,6 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(name="comment")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CommentRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Comment
 {
@@ -41,6 +42,44 @@ class Comment
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $created_at;
+
+    public function getCreated()
+    {
+        return $this->created_at;
+    }
+
+    public function setCreated($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
+    private $updated_at;
+
+    public function getModified()
+    {
+        return $this->updated_at;
+    }
+
+    public function setModified($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+
+        return $this;
+    }
 
     /**
      * @var \stdClass
@@ -113,6 +152,22 @@ class Comment
     public function getComment()
     {
         return $this->comment;
+    }
+
+    public function __construct() {
+        $this->setCreated(new \DateTime());
+        if ($this->getModified() == null) {
+            $this->setModified(new \DateTime());
+        }
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function updateModifiedDatetime() {
+        // update the modified time
+        $this->setModified(new \DateTime());
     }
 }
 

@@ -10,6 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  *
  * @ORM\Table(name="post")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PostRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class Post
 {
@@ -31,6 +32,44 @@ class Post
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $created_at;
+
+    public function getCreated()
+    {
+        return $this->created_at;
+    }
+
+    public function setCreated($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
+    private $updated_at;
+
+    public function getModified()
+    {
+        return $this->updated_at;
+    }
+
+    public function setModified($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+
+        return $this;
+    }
 
     /**
      * @var string
@@ -204,6 +243,20 @@ class Post
         // Automatically set 0 points on new post
         $this->points = 0;
         $this->comments = new ArrayCollection();
+
+        $this->setCreated(new \DateTime());
+        if ($this->getModified() == null) {
+            $this->setModified(new \DateTime());
+        }
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function updateModifiedDatetime() {
+        // update the modified time
+        $this->setModified(new \DateTime());
     }
 }
 

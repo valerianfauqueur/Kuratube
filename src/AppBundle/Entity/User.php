@@ -13,6 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  *
  * @ORM\Table(name="app_users")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\HasLifecycleCallbacks
  */
 class User implements UserInterface, \Serializable
 {
@@ -27,13 +28,51 @@ class User implements UserInterface, \Serializable
     private $comments;
 
     /**
-     * @var int
+     * @var integer
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $created_at;
+
+    public function getCreated()
+    {
+        return $this->created_at;
+    }
+
+    public function setCreated($createdAt)
+    {
+        $this->created_at = $createdAt;
+
+        return $this;
+    }
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
+    private $updated_at;
+
+    public function getModified()
+    {
+        return $this->updated_at;
+    }
+
+    public function setModified($updatedAt)
+    {
+        $this->updated_at = $updatedAt;
+
+        return $this;
+    }
 
     /**
      * @var string
@@ -50,12 +89,6 @@ class User implements UserInterface, \Serializable
      * @ORM\Column(name="password", type="string", length=100)
      */
     private $password;
-
-    /**
-     * @Assert\NotBlank()
-     * @Assert\Length(max=4096)
-     */
-    private $plainPassword;
 
     /**
      * @var string
@@ -193,6 +226,20 @@ class User implements UserInterface, \Serializable
     {
         $this->posts = new ArrayCollection();
         $this->comments = new ArrayCollection();
+
+        $this->setCreated(new \DateTime());
+        if ($this->getModified() == null) {
+            $this->setModified(new \DateTime());
+        }
+    }
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function updateModifiedDatetime() {
+        // update the modified time
+        $this->setModified(new \DateTime());
     }
 }
 
