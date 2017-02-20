@@ -22,6 +22,11 @@ class User implements UserInterface, \Serializable
     private $posts;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="author")
+     */
+    private $comments;
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
@@ -187,6 +192,7 @@ class User implements UserInterface, \Serializable
     public function __construct()
     {
         $this->posts = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 }
 

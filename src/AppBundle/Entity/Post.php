@@ -3,7 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Post
  *
@@ -12,6 +13,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="post")
+     */
+    private $comments;
+
+    public function getComments()
+    {
+        return $this->comments;
+    }
+
     /**
      * @var int
      *
@@ -36,7 +47,8 @@ class Post
     private $content;
 
     /**
-     * @var int
+     * @Assert\Type(type="AppBundle\Entity\User")
+     * @Assert\Valid()
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User", inversedBy="posts")
      * @ORM\JoinColumn(name="author", referencedColumnName="id")
      */
@@ -191,6 +203,7 @@ class Post
     {
         // Automatically set 0 points on new post
         $this->points = 0;
+        $this->comments = new ArrayCollection();
     }
 }
 

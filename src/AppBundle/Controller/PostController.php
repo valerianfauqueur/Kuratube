@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Post;
+use AppBundle\Entity\Comment;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -69,11 +70,15 @@ class PostController extends Controller
      */
     public function showAction(Post $post)
     {
-        $this->denyAccessUnlessGranted('view', $post);
         $deleteForm = $this->createDeleteForm($post);
+        $comment = new Comment();
+        $comment_form = $this->createForm('AppBundle\Form\CommentType', $comment, array(
+            'action' => $this->generateUrl('new_comment', array('postId' => $post->getId())),
+        ));
 
         return $this->render('post/show.html.twig', array(
             'post' => $post,
+            'comment_form' => $comment_form->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
