@@ -77,7 +77,7 @@ class User implements UserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=255, unique=true)
+     * @ORM\Column(name="email", type="string", length=190, unique=true)
      * @Assert\NotBlank()
      * @Assert\Email()
      */
@@ -242,4 +242,3 @@ class User implements UserInterface, \Serializable
         $this->setModified(new \DateTime());
     }
 }
-
