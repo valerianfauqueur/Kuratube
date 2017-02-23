@@ -6,8 +6,10 @@ use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Form\FormMapper;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use AppBundle\Form\TagType;
 
 class PostAdmin extends AbstractAdmin
 {
@@ -20,6 +22,11 @@ class PostAdmin extends AbstractAdmin
             ->add('category', EntityType::class, array(
                 'class' => 'AppBundle:Category',
                 'choice_label' => 'name',
+            ))
+            ->add('tags', CollectionType::class, array(
+                'entry_type' => text,
+                'allow_add' => true,
+                'allow_delete' => true,
             ));
     }
 

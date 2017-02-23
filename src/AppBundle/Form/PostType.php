@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\AppBundle;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -21,6 +22,10 @@ class PostType extends AbstractType
                 ->add('category', EntityType::class, array(
                     'class' => 'AppBundle:Category',
                     'choice_label' => 'name',
+                ))
+                ->add('tags', 'entity', array(
+                    'class'     => 'AppBundle:Tag',
+                    'multiple'  => true
                 ));
     }
     

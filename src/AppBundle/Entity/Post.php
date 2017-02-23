@@ -15,6 +15,27 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Post
 {
     /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Tag", cascade={"persist"})
+     */
+    private $tags;
+
+    /**
+     * @return mixed
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param mixed $tags
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
+    /**
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="post")
      */
     private $comments;
@@ -268,6 +289,7 @@ class Post
         // Automatically set 0 points on new post
         $this->points = 0;
         $this->comments = new ArrayCollection();
+        $this->tags = new ArrayCollection();
 
         $this->setCreatedAt(new \DateTime());
         if ($this->getUpdatedAt() == null) {
