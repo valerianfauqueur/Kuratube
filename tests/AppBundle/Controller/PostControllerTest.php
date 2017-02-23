@@ -6,10 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class PostControllerTest extends WebTestCase
 {
-    
+    /*
     public function testCompleteScenario()
     
-     /*
     {
        
         // Create a new client to browse the application
@@ -62,7 +61,7 @@ class PostControllerTest extends WebTestCase
             'test2' => 'test2',
         );
 
-        $form = $this->factory->create(TestedType::class);
+        $form = $this->post->create(TestedType::class);
 
         $object = TestObject::fromArray($formData);
 
