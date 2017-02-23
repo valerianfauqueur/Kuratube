@@ -1,0 +1,25 @@
+<a href="{{ path('post_show', {'id': post.id}) }}" >
+<div class="feed__centralPost">
+    <div class="post__image"></div>
+    <div class="post__text">
+        <div class="post__textCategory">{{ post.title }}</div>
+        <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+        <div class="post__textProfile">
+            <div class="profile__name">Squeezie</div>
+            <div class="profile__subscribers">2 394 394 subscribers</div>
+        </div>
+        <div class="post__textTags">
+            <ul>
+            {% for tag in post.tags %}
+                <li>#{{ tag }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+        <div class="post__textInfos">
+            <div class="infos__poster">posted by {{ post.author.username }}</div>
+            <div class="infos__time">{{ post.createdAt|ago }}</div>
+            <div class="infos__type">{{ post.category.name }}</div>
+        </div>
+    </div>
+</div>
+</a>

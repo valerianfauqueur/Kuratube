@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block stylesheets %}
-<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+    <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 {% endblock %}
 {% block body %}
 
@@ -135,114 +135,9 @@
             <div class="head__text">NEW</div>
             <div class="head__text">DISCOVER</div>
         </div>
-        <div class="feed__centralPost">
-            <div class="post__image"></div>
-            <div class="post__text">
-                <div class="post__textCategory">Fun french gameplay</div>
-                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
-                <div class="post__textProfile">
-                    <div class="profile__name">Squeezie</div>
-                    <div class="profile__subscribers">2 394 394 subscribers</div>
-                </div>
-                <div class="post__textTags">#funny #french #gameplay</div>
-                <div class="post__textInfos">
-                    <div class="infos__poster">posted by Kzo-20</div>
-                    <div class="infos__time">20 min ago</div>
-                    <div class="infos__type">GAMING</div>
-                </div>
-
-            </div>
-        </div>
-        <div class="feed__centralPost">
-            <div class="post__image"></div>
-            <div class="post__text">
-                <div class="post__textCategory">Fun french gameplay</div>
-                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
-                <div class="post__textProfile">
-                    <div class="profile__name">Squeezie</div>
-                    <div class="profile__subscribers">2 394 394 subscribers</div>
-                </div>
-                <div class="post__textTags">#funny #french #gameplay</div>
-                <div class="post__textInfos">
-                    <div class="infos__poster">posted by Kzo-20</div>
-                    <div class="infos__time">20 min ago</div>
-                    <div class="infos__type">GAMING</div>
-                </div>
-
-            </div>
-        </div>
-        <div class="feed__centralPost">
-            <div class="post__image"></div>
-            <div class="post__text">
-                <div class="post__textCategory">Fun french gameplay</div>
-                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
-                <div class="post__textProfile">
-                    <div class="profile__name">Squeezie</div>
-                    <div class="profile__subscribers">2 394 394 subscribers</div>
-                </div>
-                <div class="post__textTags">#funny #french #gameplay</div>
-                <div class="post__textInfos">
-                    <div class="infos__poster">posted by Kzo-20</div>
-                    <div class="infos__time">20 min ago</div>
-                    <div class="infos__type">GAMING</div>
-                </div>
-
-            </div>
-        </div>
-        <div class="feed__centralPost">
-            <div class="post__image"></div>
-            <div class="post__text">
-                <div class="post__textCategory">Fun french gameplay</div>
-                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
-                <div class="post__textProfile">
-                    <div class="profile__name">Squeezie</div>
-                    <div class="profile__subscribers">2 394 394 subscribers</div>
-                </div>
-                <div class="post__textTags">#funny #french #gameplay</div>
-                <div class="post__textInfos">
-                    <div class="infos__poster">posted by Kzo-20</div>
-                    <div class="infos__time">20 min ago</div>
-                    <div class="infos__type">GAMING</div>
-                </div>
-
-            </div>
-        </div>
-        <div class="feed__centralPost">
-            <div class="post__image"></div>
-            <div class="post__text">
-                <div class="post__textCategory">Fun french gameplay</div>
-                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
-                <div class="post__textProfile">
-                    <div class="profile__name">Squeezie</div>
-                    <div class="profile__subscribers">2 394 394 subscribers</div>
-                </div>
-                <div class="post__textTags">#funny #french #gameplay</div>
-                <div class="post__textInfos">
-                    <div class="infos__poster">posted by Kzo-20</div>
-                    <div class="infos__time">20 min ago</div>
-                    <div class="infos__type">GAMING</div>
-                </div>
-
-            </div>
-        </div>
-        <div class="feed__centralPost">
-            <div class="post__image"></div>
-            <div class="post__text">
-                <div class="post__textCategory">Fun french gameplay</div>
-                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
-                <div class="post__textProfile">
-                    <div class="profile__name">Squeezie</div>
-                    <div class="profile__subscribers">2 394 394 subscribers</div>
-                </div>
-                <div class="post__textTags">#funny #french #gameplay</div>
-                <div class="post__textInfos">
-                    <div class="infos__poster">posted by Kzo-20</div>
-                    <div class="infos__time">20 min ago</div>
-                    <div class="infos__type">GAMING</div>
-                </div>
-
-            </div>
-        </div>
+        {% for post in posts %}
+            {% include '/post/post/post.html.twig' with {'post': post} %}
+        {% endfor %}
     </div>
     <div class="feed__perso">
     <input type="button" class="button_create" value="CREATE A POST">
