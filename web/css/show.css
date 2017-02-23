@@ -66,7 +66,7 @@ html
 }
 
 .container_header
-{	
+{
 	display: flex;
 	justify-content: space-between;
 }
@@ -74,6 +74,12 @@ html
 .form
 {
 	align-self: flex-end;
+}
+
+.form_position
+{
+	display: flex;
+	flex-direction: row;
 }
 
 .form_bar
@@ -84,11 +90,10 @@ html
 
 .form_button
 {
-	background-color: black;
+	background-color: #2196F3;
 	color: white;
 	border: 0rem;
 	width: 7.26vw;
-	height: 2.11vw;
 	cursor: pointer;
 }
 
@@ -272,12 +277,13 @@ html
 {
 	display: flex;
 	flex-direction: row;
-	font-size: 12px;
+	margin-bottom: 10px;
 }
 
 .video_arrowPoints
 {
 	margin-right: 20px;
+	font-size: 12px;
 }
 
 .feed__videoText
@@ -383,7 +389,7 @@ html
 	height: 100%;
 	background-color: white;
 	margin-left: 1.25rem;
-	height: 170px;
+	height: 180px;
 }
 
 .user__description
@@ -409,6 +415,7 @@ html
 {
 	display: flex;
 	flex-direction: row;
+	margin-bottom: 10px;
 }
 
 .details__userName
@@ -425,10 +432,22 @@ html
 
 .user__descriptionFollowimage
 {
+	height: 4.62vw;
 	width: 4.62vw;
 	background-color: grey;
 	margin-right: 0.1875rem;
 	margin-top: 0.1875rem;	
+}
+
+.user__separation
+{
+	height: 2px;
+	max-width: 400px;
+	background-color: #4A4A4A;
+	margin-top:15px;
+	margin-right: 5px;
+	margin-left: 0.5075rem;
+
 }
 
 .user__interests

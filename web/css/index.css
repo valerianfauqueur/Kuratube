@@ -176,12 +176,6 @@ html
 	font-size: 12px;
 }
 
-.featured__content
-{
-	background-color: lightgrey;
-	height: 7.392vw;
-}
-
 /* SECOND BLOCK */
 
 .feed__sideRandom
@@ -221,13 +215,12 @@ html
 	display: flex;
 	flex-direction: row;
 	margin-top: 0.3125rem;
+	justify-content: space-between;
 }
 
 .follow__profileImage
 {
-	width: 1.98vw;
-	height: 1.98vw;
-	background-color: lightgrey;
+
 	margin-left: 0.1875rem;
 }
 
@@ -240,13 +233,12 @@ html
 .follow__profileAdd
 {
 	font-size: 1.875rem;
-	margin-left: 1.25rem;
+	margin-right: 1.25rem;
 }
 
 .description__name
 {
 	font-size: 0.875rem;
-	margin-left: 0.5625rem;
 }
 
 .description__info
@@ -260,12 +252,10 @@ html
 	width: 0.858vw;
 	height: 0.924vw;
 	background-color: lightgrey;
-	margin-left: 0.5625rem;
 }
 
 .description__infoFollowers
 {
-	margin-left: 0.625rem;
 	font-size: 0.75rem;
 }
 
@@ -304,12 +294,10 @@ html
 	margin-top: 0.1875rem;
 }
 
-.popular__postImage
+.popular__postVideo
 {
 	margin-top: 0.3125rem;
-	width: 2.63vw;
-	height: 1.584vw;
-	background-color: lightgrey;
+
 	margin-left: 0.1875rem;
 }
 
@@ -475,6 +463,9 @@ html
 {
 	display: flex;
 	flex-direction: row;
+	margin-top: 10px;
+	margin-bottom: 10px;
+
 }
 
 .details__userName
@@ -501,6 +492,11 @@ html
 	flex-direction: column;
 	margin-top: 1.25rem;
 	margin-left: 0.5075rem;
+}
+
+.user__interestsLiked
+{
+	margin-bottom: 5px;
 
 }
 
