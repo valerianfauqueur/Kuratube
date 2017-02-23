@@ -25,6 +25,31 @@ class Post
     }
 
     /**
+     * @Assert\Type(type="AppBundle\Entity\Category")
+     * @Assert\Valid()
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category", inversedBy="posts")
+     * @ORM\JoinColumn(name="category", referencedColumnName="id")
+     */
+    private $category;
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+
+    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
