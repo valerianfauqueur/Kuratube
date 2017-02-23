@@ -1,7 +1,33 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Valérian
- * Date: 23/02/2017
- * Time: 02:54
- */
+
+namespace AppBundle\Admin;
+
+use Sonata\AdminBundle\Admin\AbstractAdmin;
+use Sonata\AdminBundle\Datagrid\ListMapper;
+use Sonata\AdminBundle\Datagrid\DatagridMapper;
+use Sonata\AdminBundle\Form\FormMapper;
+
+class CategoryAdmin extends AbstractAdmin
+{
+    protected function configureFormFields(FormMapper $formMapper)
+    {
+        $formMapper
+            ->add('name', 'text');
+    }
+
+    protected function configureDatagridFilters(DatagridMapper $datagridMapper)
+    {
+        $datagridMapper
+            ->add('name')
+            ->add('created_at', 'doctrine_orm_date_range')
+            ->add('updated_at', 'doctrine_orm_date_range');
+    }
+
+    protected function configureListFields(ListMapper $listMapper)
+    {
+        $listMapper
+            ->addIdentifier('name')
+            ->addIdentifier('created_at')
+            ->addIdentifier('updated_at');
+    }
+}
