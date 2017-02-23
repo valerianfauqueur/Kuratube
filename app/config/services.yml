@@ -3,13 +3,17 @@
 parameters:
 #    parameter_name: value
 
-services:
+
 services:
     app.post_voter:
         class: AppBundle\Security\PostVoter
         tags:
             - { name: security.voter }
-        # small performance boost
+        public: false
+    app.comment_voter:
+        class: AppBundle\Security\CommentVoter
+        tags:
+            - { name: security.voter }
         public: false
     admin.post:
         class: AppBundle\Admin\PostAdmin
@@ -36,3 +40,5 @@ services:
         arguments: [~, AppBundle\Entity\Tag, ~]
         tags:
             - { name: sonata.admin, manager_type: orm, label: Tags }
+    comment_service:
+        class: AppBundle\Controller\CommentController
