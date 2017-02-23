@@ -1,5 +1,5 @@
 <div class="comment">
     <div class="author">{{ comment.author.username }}</div>
     <p>{{ comment.comment }}</p>
-
+    <a data-method="delete" href="{{ path('comment_delete', { 'postId': post.id, 'commentId': comment.id }) }}" >Suppr</a>
 </div>
