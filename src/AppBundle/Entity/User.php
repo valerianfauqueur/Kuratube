@@ -18,12 +18,12 @@ use Doctrine\Common\Collections\ArrayCollection;
 class User implements UserInterface, \Serializable
 {
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Post", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Post", mappedBy="author", orphanRemoval=true)
      */
     private $posts;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="author")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="author", orphanRemoval=true)
      */
     private $comments;
 

@@ -36,7 +36,7 @@ class Post
     }
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="post")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Comment", mappedBy="post", orphanRemoval=true)
      */
     private $comments;
 
