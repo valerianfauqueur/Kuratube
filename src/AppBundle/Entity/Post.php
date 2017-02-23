@@ -140,6 +140,29 @@ class Post
     private $author;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="video", type="string", length=43)
+     */
+    private $video;
+
+    /**
+     * @return string
+     */
+    public function getVideo()
+    {
+        return $this->video;
+    }
+
+    /**
+     * @param string $video
+     */
+    public function setVideo($video)
+    {
+        $this->video = $video;
+    }
+
+    /**
      * @var int
      *
      * @ORM\Column(name="points", type="integer")
@@ -304,6 +327,24 @@ class Post
     public function updateModifiedDatetime() {
         // update the modified time
         $this->setUpdatedAt(new \DateTime());
+    }
+
+    /**
+     * Increment points of a post
+     *
+     */
+    public function upvote()
+    {
+        $this->setPoints($this->getPoints() + 1);
+    }
+
+    /**
+     * Increment points of a post
+     *
+     */
+    public function downvote()
+    {
+        $this->setPoints($this->getPoints() - 1);
     }
 }
 
