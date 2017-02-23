@@ -2,8 +2,43 @@
 
 {% block title %}AppBundle:Registration:register{% endblock %}
 
+{% block stylesheets %}<link rel="stylesheet" href="{{ asset('css/signup.css') }}" />{% endblock %}
+
 {% block body %}
 <h1>Welcome to the Registration:register page</h1>
+
+	<div class="signup__container">
+		<h2 class="signup__title">Sign Up</h2>
+		<p class="signup__welcome--sentence">Welcome to Kuratube. Thank you for discovering with us ! 👀</p>
+		<div class="signup__container--form">
+			<p class="signup__informations">EMAIL</p>
+			<form class="signup__form">
+				<input type="text" placeholder="youradress@kuratube.com"></input>
+			</form>
+			<p class="signup__informations">VERIFY EMAIL</p>
+			<form class="signup__form">
+				<input type="text" placeholder="youradress@kuratube.com"></input>
+			</form>
+			<p class="signup__informations">USERNAME</p>
+			<form class="signup__form">
+				<input type="text" placeholder="your username"></input>
+			</form>
+			<p class="signup__informations">PASSWORD</p>
+			<form class="signup__form">
+				<input type="password" placeholder="your password"></input>
+			</form>
+			<p class="signup__informations">PASSWORD</p>
+			<form class="signup__form">
+				<input type="password" placeholder="your password"></input>
+			</form>
+			<p class="signup__informations">ENTER YOUR BIO</p>
+			<form class="signup__form">
+				<input class="signup__form--biography" type="text" placeholder="Tell a little about you !"></input>
+			</form>
+			<button class="signup__button--submit" type="button">IT'S ALL GOOD</button>
+		</div>
+	</div>
+
     {{ form_start(form) }}
     {{ form_row(form.username) }}
     {{ form_row(form.email) }}

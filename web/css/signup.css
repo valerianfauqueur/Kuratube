@@ -1,0 +1,204 @@
+@media only screen and (max-width: 480px) {
+    /* For smartphones: */
+	body
+	{
+		background-color: #eeeeee;
+	}
+
+	.signup__container
+	{
+		width: 340px;
+		height: 600px;
+		background-color: #FFFFFF;
+		margin: auto;
+		margin-top: 100px;
+	}
+
+	.signup__title
+	{
+		position: left;
+		padding-left: 3%;
+		padding-top: 2%;
+	}
+
+	.signup__welcome--sentence
+	{
+		padding-top: 2%;
+		padding-bottom: 2%;
+		text-align: center;
+	}
+
+	.signup__container--form
+	{
+		width: 220px;
+		margin: auto;
+	}
+
+	.signup__informations
+	{
+		font-size: 12px;
+		margin-bottom: 2%;
+	}
+
+	.signup__form input
+	{
+		margin: auto;
+		width: 220px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: 2px solid;
+	}
+
+	.signup__form--biography
+	{
+		height: 80px;
+	}
+
+	.signup__button--submit
+	{
+		font-size: 14px;
+		border: none;
+		background-color: #2196F3;
+		color: #FFFFFF;
+		float: right;
+		margin-top: 4%;
+	}
+}
+
+@media (min-width:480px) and (max-width:800px) {
+    /* For tablets: */
+	body
+	{
+		background-color: #eeeeee;
+	}
+
+	.signup__container
+	{
+		width: 440px;
+		height: 600px;
+		background-color: #FFFFFF;
+		margin: auto;
+		margin-top: 100px;
+	}
+
+	.signup__title
+	{
+		position: left;
+		padding-left: 3%;
+		padding-top: 2%;
+	}
+
+	.signup__welcome--sentence
+	{
+		padding-top: 2%;
+		padding-bottom: 2%;
+		text-align: center;
+	}
+
+	.signup__container--form
+	{
+		width: 320px;
+		margin: auto;
+	}
+
+	.signup__informations
+	{
+		font-size: 12px;
+		margin-bottom: 2%;
+	}
+
+	.signup__form input
+	{
+		margin: auto;
+		width: 320px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: 2px solid;
+	}
+
+	.signup__form--biography
+	{
+		height: 80px;
+	}
+
+	.signup__button--submit
+	{
+		font-size: 14px;
+		border: none;
+		background-color: #2196F3;
+		color: #FFFFFF;
+		float: right;
+		margin-top: 4%;
+	}
+}
+
+@media (min-width:800px) and (max-width:1440px) {
+	/* For Desktop: */
+	body
+	{
+		background-color: #eeeeee;
+	}
+
+	.signup__container
+	{
+		width: 640px;
+		height: 600px;
+		background-color: #FFFFFF;
+		margin: auto;
+		margin-top: 100px;
+	}
+
+	.signup__title
+	{
+		position: left;
+		padding-left: 3%;
+		padding-top: 2%;
+	}
+
+	.signup__welcome--sentence
+	{
+		padding-top: 2%;
+		padding-bottom: 2%;
+		text-align: center;
+	}
+
+	.signup__container--form
+	{
+		width: 420px;
+		margin: auto;
+	}
+
+	.signup__informations
+	{
+		font-size: 12px;
+		margin-bottom: 2%;
+	}
+
+	.signup__form input
+	{
+		margin: auto;
+		width: 420px;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		border-bottom: 2px solid;
+	}
+
+	.signup__form--biography
+	{
+		height: 80px;
+	}
+
+	.signup__button--submit
+	{
+		font-size: 14px;
+		border: none;
+		background-color: #2196F3;
+		color: #FFFFFF;
+		float: right;
+		margin-top: 4%;
+	}
+}
+
