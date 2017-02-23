@@ -227,10 +227,28 @@ class User implements UserInterface, \Serializable
         return $this->username;
     }
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="token", type="string", length=190)
+     */
+    private $token;
+
+    /**
+     * Get user token
+     *
+     * @return string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->token = md5(uniqid(rand(), true));
 
         $this->setCreatedAt(new \DateTime());
         if ($this->getUpdatedAt() == null) {
