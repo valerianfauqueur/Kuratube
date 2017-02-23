@@ -84,7 +84,6 @@ class User implements UserInterface, \Serializable
     private $email;
 
     /**
-     * @Assert\NotBlank()
      * @Assert\Length(max=4096)
      */
     private $plainPassword;

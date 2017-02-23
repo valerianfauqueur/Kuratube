@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -16,7 +17,11 @@ class PostType extends AbstractType
     {
         $builder->add('title')
                 ->add('content', TextareaType::class)
-                ->add('channel');
+                ->add('channel')
+                ->add('category', EntityType::class, array(
+                    'class' => 'AppBundle:Category',
+                    'choice_label' => 'name',
+                ));
     }
     
     /**

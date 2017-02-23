@@ -122,5 +122,9 @@ class Category
         // update the modified time
         $this->setUpdatedAt(new \DateTime());
     }
+
+    public function __toString() {
+        return $this->name;
+    }
 }
 
