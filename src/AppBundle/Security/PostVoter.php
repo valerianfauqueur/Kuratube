@@ -31,8 +31,7 @@ class PostVoter extends Voter
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
     {
         $user = $token->getUser();
-
-        if (!$user instanceof User) {
+        if (!$user instanceof User && !is_a($user, 'Symfony\Component\Security\Core\User\User')) {
             // the user must be logged in; if not, deny access
             return false;
         }
@@ -53,17 +52,19 @@ class PostVoter extends Voter
         throw new \LogicException('This code should not be reached!');
     }
 
-    private function canView(Post $post, User $user)
+    private function canView(Post $post, $user)
     {
         return true;
     }
 
-    private function canEdit(Post $post, User $user)
+    private function canEdit(Post $post, $user)
     {
-        return $user === $post->getAuthor();
+        if($user === $post->getAuthor() || in_array('ROLE_ADMIN', $user->getRoles())) {
+            return true;
+        }
     }
 
-    private function canDelete(Post $post, User $user)
+    private function canDelete(Post $post, $user)
     {
         if ($this->canEdit($post, $user)) {
             return true;
