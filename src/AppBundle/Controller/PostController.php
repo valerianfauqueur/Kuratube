@@ -4,10 +4,12 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Post;
 use AppBundle\Entity\Comment;
+use AppBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Post controller.
@@ -146,5 +148,49 @@ class PostController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    /**
+     * Upvote the post {id}
+     *
+     * @Route("/{postId}/upvote", name="post_upvote")
+     * @Method("POST")
+     */
+    public function upvoteAction(Request $request, $postId)
+    {
+        $data = $request->request->all();
+        $userToken = $data['token'];
+        $em = $this->getDoctrine()->getManager();
+        // get the user that upvoted by searching his token
+        $userUpvoted = $em->getRepository('AppBundle\Entity\User')->findOneBy(array('token' => $userToken));
+        if($userUpvoted instanceof User) {
+            $upvotedPost = $em->getRepository('AppBundle\Entity\Post')->upvotePost($postId);
+            $em->persist($upvotedPost);
+            $em->flush();
+            return new Response(json_encode(['success' => true]));
+        }
+        return new Response(json_encode(['success' => false]));
+    }
+
+    /**
+     * Downvote the post {id}
+     *
+     * @Route("/{postId}/downvote", name="post_downvote")
+     * @Method("POST")
+     */
+    public function downvoteAction(Request $request, $postId)
+    {
+        $data = $request->request->all();
+        $userToken = $data['token'];
+        $em = $this->getDoctrine()->getManager();
+        // get the user that upvoted by searching his token
+        $userDownvoted = $em->getRepository('AppBundle\Entity\User')->findOneBy(array('token' => $userToken));
+        if($userDownvoted instanceof User) {
+            $downvotedPost = $em->getRepository('AppBundle\Entity\Post')->downvotePost($postId);
+            $em->persist($downvotedPost);
+            $em->flush();
+            return new Response(json_encode(['success' => true]));
+        }
+        return new Response(json_encode(['success' => false]));
     }
 }
