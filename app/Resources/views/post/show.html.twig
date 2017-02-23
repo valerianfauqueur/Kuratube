@@ -59,7 +59,7 @@
         <div class="title_time">{{ post.createdAt|ago }}</div>
     </div>
 
-<div class="feed__centralVideo"></div>
+<div class="feed__centralVideo"><iframe width="710" height="394" src="https://www.youtube.com/embed/DHyUYg8X31c" frameborder="0" allowfullscreen></iframe></div>
 
 <div class="feed__videoDescription">
     <div class="feed__videoInfo">
@@ -96,7 +96,7 @@
     {% endfor %}
 </div>
 <div class="feed__side">
-    <input type="button" class="button_create" value="CREATE A POST">
+    <a href="{{ path('post_new') }}" ><input type="button" class="button_create" value="CREATE A POST"></a>
     <div class="feed__perso">
         <div class="feed__persoCreate"></div>
         <div class="feed__persoUser">
