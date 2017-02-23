@@ -34,4 +34,23 @@ class CommentController extends Controller
 
         return $this->redirectToRoute('post_show', array('id' => $postId));
     }
+
+    /**
+     * Deletes a comment entity.
+     *
+     * @Route("/post/{postId}/comment/{commentId}/delete", name="comment_delete")
+     * @Method("GET")
+     */
+    public function deleteAction($commentId, $postId)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $commentToDelete = $em->getRepository('AppBundle:Comment')->findOneBy(array('id' => $commentId));
+
+        $this->denyAccessUnlessGranted('delete', $commentToDelete);
+
+        $em->remove($commentToDelete);
+        $em->flush($commentToDelete);
+
+        return $this->redirectToRoute('post_show', array('id' => $postId));
+    }
 }
