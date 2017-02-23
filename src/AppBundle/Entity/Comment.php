@@ -50,12 +50,12 @@ class Comment
      */
     private $created_at;
 
-    public function getCreated()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
 
-    public function setCreated($createdAt)
+    public function setCreatedAt($createdAt)
     {
         $this->created_at = $createdAt;
 
@@ -69,12 +69,12 @@ class Comment
      */
     private $updated_at;
 
-    public function getModified()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
 
-    public function setModified($updatedAt)
+    public function setUpdatedAt($updatedAt)
     {
         $this->updated_at = $updatedAt;
 
@@ -155,9 +155,9 @@ class Comment
     }
 
     public function __construct() {
-        $this->setCreated(new \DateTime());
-        if ($this->getModified() == null) {
-            $this->setModified(new \DateTime());
+        $this->setCreatedAt(new \DateTime());
+        if ($this->getUpdatedAt() == null) {
+            $this->setUpdatedAt(new \DateTime());
         }
     }
 
@@ -167,7 +167,7 @@ class Comment
      */
     public function updateModifiedDatetime() {
         // update the modified time
-        $this->setModified(new \DateTime());
+        $this->setUpdatedAt(new \DateTime());
     }
 }
 

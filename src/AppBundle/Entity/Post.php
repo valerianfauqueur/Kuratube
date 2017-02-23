@@ -40,12 +40,12 @@ class Post
      */
     private $created_at;
 
-    public function getCreated()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
 
-    public function setCreated($createdAt)
+    public function setCreatedAt($createdAt)
     {
         $this->created_at = $createdAt;
 
@@ -59,12 +59,12 @@ class Post
      */
     private $updated_at;
 
-    public function getModified()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
 
-    public function setModified($updatedAt)
+    public function setUpdatedAt($updatedAt)
     {
         $this->updated_at = $updatedAt;
 
@@ -244,9 +244,9 @@ class Post
         $this->points = 0;
         $this->comments = new ArrayCollection();
 
-        $this->setCreated(new \DateTime());
-        if ($this->getModified() == null) {
-            $this->setModified(new \DateTime());
+        $this->setCreatedAt(new \DateTime());
+        if ($this->getUpdatedAt() == null) {
+            $this->setUpdatedAt(new \DateTime());
         }
     }
 
@@ -256,7 +256,7 @@ class Post
      */
     public function updateModifiedDatetime() {
         // update the modified time
-        $this->setModified(new \DateTime());
+        $this->setUpdatedAt(new \DateTime());
     }
 }
 
