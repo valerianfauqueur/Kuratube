@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+{% endblock %}
 {% block body %}
+
 <div class="color__choices">
             <div class="color__choicesInput color__choicesInput--blue"></div>
             <div class="color__choicesInput color__choicesInput--purple"></div>
@@ -10,7 +13,7 @@
             <div class="color__choicesText">change theme</div>
     </div>
     <div class="container_header">
-        <div class="logo logo_position"></div>
+        <div class="logo logo_position">k</div>
         <div class="form">
             <form class="form_position">
                 <input class="form_bar" type="text" name="searchbar" placeholder="Discover your new favorite youtuber…">
@@ -89,29 +92,6 @@
                 <div class="follow__profileAdd">+</div>
             </div>
 
-            <div class="follow__profile">
-                <div class="follow__profileImage"></div>
-                <div class="follow__profileDescription">
-                    <div class="description__name">Anthony Chevalin</div>
-                    <div class="description__info">
-                        <div class="description__infoCountry"></div>
-                        <div class="description__infoFollowers">263 followers</div>
-                    </div>
-                </div>
-                <div class="follow__profileAdd">+</div>
-            </div>
-            <div class="follow__profile">
-                <div class="follow__profileImage"></div>
-                <div class="follow__profileDescription">
-                    <div class="description__name">Anthony Chevalin</div>
-                    <div class="description__info">
-                        <div class="description__infoCountry"></div>
-                        <div class="description__infoFollowers">263 followers</div>
-                    </div>
-                </div>
-                <div class="follow__profileAdd">+</div>
-            </div>
-
         </div>
         <div class="feed__sidePopular">
             <div class="popular__title">POPULAR</div>
@@ -135,6 +115,7 @@
                     <div class="popular__postText--title">why i decided to quit</div>
                     <div class="popular__postText--number"> 714</div>
                 </div>
+
             </div>
             <div class="popular__post">
                 <div class="popular__postImage"></div>
@@ -142,21 +123,9 @@
                     <div class="popular__postText--title">why i decided to quit</div>
                     <div class="popular__postText--number"> 714</div>
                 </div>
+
             </div>
-            <div class="popular__post">
-                <div class="popular__postImage"></div>
-                <div class="popular__postText">
-                    <div class="popular__postText--title">why i decided to quit</div>
-                    <div class="popular__postText--number"> 714</div>
-                </div>
-            </div>
-            <div class="popular__post">
-                <div class="popular__postImage"></div>
-                <div class="popular__postText">
-                    <div class="popular__postText--title">why i decided to quit</div>
-                    <div class="popular__postText--number"> 714</div>
-                </div>
-            </div>
+
 
         </div>
     </div>
@@ -276,6 +245,8 @@
         </div>
     </div>
     <div class="feed__perso">
+    <input type="button" class="button_create" value="CREATE A POST">
+
         <div class="feed__persoCreate"></div>
         <div class="feed__persoUser">
             <div class="user__description">
@@ -290,13 +261,15 @@
                 </div>
                 <div class="user__descriptionFollowimage"></div>
               </div>
+                <div class="user__separation"></div>
                 <div class="user__interests">
                     <div class="user__interestsFollowed">You recently followed Phillipe, Laura and Patrick.</div>
                     <div class="user__interestsLiked">Last post you liked : A french comedian by Laura.</div>
                 </div>
             </div>
-
+            </div>
         </div>
     </div>
 </div>
+
 {% endblock %}

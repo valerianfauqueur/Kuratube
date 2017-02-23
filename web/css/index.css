@@ -4,6 +4,8 @@ html
 	width: 100vw;
 	max-width: 1080px;
 	margin: auto;
+	background-color: #eeeeee;
+
 }
 /* HEADER */
 
@@ -60,9 +62,7 @@ html
 
 .logo
 {
-	height: 6.59vw;
-	width: 2.63vw;
-	background-color: black;
+	font-size: 84px;
 }
 
 .container_header
@@ -78,6 +78,8 @@ html
 
 .form_position
 {
+	display: flex;
+	flex-direction: row;
 }
 
 .form_bar
@@ -88,11 +90,10 @@ html
 
 .form_button
 {
-	background-color: black;
+	background-color: #2196F3;
 	color: white;
 	border: 0rem;
 	width: 7.26vw;
-	height: 2.11vw;
 	cursor: pointer;
 }
 
@@ -131,10 +132,8 @@ html
 {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	height: 49.9vw;
 	width: 100%;
-	max-width: 13.18vw;
+	max-width: 200px;
 }
 
 /* FIRST BLOCK */
@@ -142,34 +141,39 @@ html
 .feed__sideFeatured
 {
 	width: 100%;
+	margin-bottom: 10px;
 }
 
 .featured__navbar
 {
 	display: flex;
 	flex-direction: row;
-	background-color: grey;
 	width: 100%;
+	justify-content: space-between;
+	background-color: white;
 }
 
 .featured__navbar--title
 {
 	padding-left: 0.1875rem;
 	padding-top: 0.1875rem;
-	padding-right: 3.75rem;
+	font-size: 18px;
 }
 
 .featured__navbar--text
 {
-	padding-right: 0.1875rem;
 	padding-top: 0.1875rem;
+	font-size: 7px;
+	padding-top: 5px;
+	padding-right: 5px;
 }
 
 .featured__navbar--subtitle
 {
-	background-color: grey;
+	background-color: white;
 	padding-bottom: 0.1875rem;
 	padding-left: 0.1875rem;
+	font-size: 12px;
 }
 
 .featured__content
@@ -184,8 +188,9 @@ html
 {
 	display: flex;
 	width: 100%;
-	height: 7.392vw;
 	background-color: lightgrey;
+	margin-bottom: 10px;
+	min-height: 50
 }
 
 .random__content
@@ -198,8 +203,9 @@ html
 .feed__sideFollow
 {
 	width: 100%;
-	height: 15.44vw;
-	background-color: grey;
+	background-color: white;
+	margin-bottom: 10px;
+
 }
 
 .follow__title
@@ -207,6 +213,7 @@ html
 	margin-top: 0.3125rem;
 	margin-left: 0.3125rem;
 	margin-bottom: 0.5625rem;
+	font-size: 21px;
 }
 
 .follow__profile
@@ -267,13 +274,15 @@ html
 .feed__sidePopular
 {
 	width: 100%;
-	height: 15.44vw;
-	background-color: grey;
+	background-color: white;
 }
 
 .popular__title
 {
-
+	margin-top: 0.3125rem;
+	margin-left: 0.3125rem;
+	margin-bottom: 0.5625rem;
+	font-size: 21px;
 }
 
 .popular__date
@@ -330,7 +339,6 @@ html
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	max-width: 34.98vw;
 	margin-left: 1.25rem;
 }
 
@@ -350,6 +358,8 @@ html
 	display: flex;
 	flex-direction: row;
 	margin-top: 0.625rem;
+	width: 100%;
+	background-color: white;
 }
 
 .post__image
@@ -363,8 +373,6 @@ html
 {
 
 	width: 100%;
-	height: 7.392vw;
-	background-color: lightgrey;
 	padding-left: 0.652rem;
 }
 
@@ -437,17 +445,21 @@ html
 {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
-	max-width: 26.73vw;
+	justify-content: flex-start;
 	height: 100%;
-	background-color: lightgrey;
 	margin-left: 1.25rem;
 }
 
+.user__description
+{
+	background-color: white;
+
+}
 .user__descriptionImage
 {
 	display: flex;
 	flex-direction: row;
+
 }
 
 .user__descriptionDetails
@@ -455,6 +467,8 @@ html
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	margin-left: 0.5075rem;
+
 }
 
 .details__user
@@ -477,7 +491,6 @@ html
 
 .user__descriptionFollowimage
 {
-	height: 4.62vw;
 	width: 4.62vw;
 	background-color: grey;
 }
@@ -487,6 +500,8 @@ html
 	display: flex;
 	flex-direction: column;
 	margin-top: 1.25rem;
+	margin-left: 0.5075rem;
+
 }
 
 .details__description
@@ -494,7 +509,117 @@ html
 	margin-left: 0.1875rem;
 }
 
+.user__separation
+{
+	height: 2px;
+	max-width: 400px;
+	background-color: #4A4A4A;
+	margin-top:15px;
+	margin-right: 5px;
+	margin-left: 0.5075rem;
+
+}
+
 .user__interests
 {
-	margin-left: 0.1875rem;
+	margin-bottom: 10px;
+}
+
+/* SIGN IN */
+
+.feed__sideRight
+{
+	display: flex;
+	flex-direction: column;
+	margin-left: 10px;
+	background-color: white;
+	padding-left: 20px;
+	padding-top: 7px;
+	padding-right: 20px;
+	width: 100%;
+}
+
+.text_title
+{
+	font-size: 21px;
+}
+
+.text_description
+{
+	font-size: 14px;
+	padding-bottom: 5px;
+}
+
+.username_input
+{
+	margin-bottom: 5px;
+	border: 1px solid #2196F3;
+	width: 100%;
+	height: 30px;
+	padding-left: 5px;
+}
+
+.password_input
+{
+	margin-bottom: 5px;
+	border: 1px solid #2196F3;
+	width: 100%;
+	height: 30px;
+	padding-left: 5px;
+}
+
+.right_password
+{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.password__signup
+{
+    background-color: white;
+    border: none;
+    color: black;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 14px;
+
+}
+
+.password__signin
+{
+    background-color: #2196F3;
+    border: none;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.forgot__password
+{
+    border: none;
+    color: grey;
+    text-decoration: none;
+    background-color: white;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+
+.button_create
+{
+	width: 240px;
+	height: 56px;
+	background-color: #2196F3;
+	color: white;
+	margin-left: 0.5rem;
+	margin-bottom: 10px;
+	border:none;
 }

@@ -2,14 +2,281 @@
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
 {% endif %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+{% endblock %}
+{% block body %}
 
-<form action="{{ path('login') }}" method="post">
-    <label for="username">Username:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" />
+<div class="color__choices">
+            <div class="color__choicesInput color__choicesInput--blue"></div>
+            <div class="color__choicesInput color__choicesInput--purple"></div>
+            <div class="color__choicesInput color__choicesInput--green"></div>
+            <div class="color__choicesInput color__choicesInput--orange"></div>
+            <div class="color__choicesInput color__choicesInput--red"></div>
+            <div class="color__choicesText">change theme</div>
+    </div>
+    <div class="container_header">
+        <div class="logo logo_position">k</div>
+        <div class="form">
+            <form class="form_position">
+                <input class="form_bar" type="text" name="searchbar" placeholder="Discover your new favorite youtuber…">
+                <input class="form_button" type="submit" value="SEARCH">
+            </form>
+        </div>
+        <div class="text_online">1826 online</div>
+    </div>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" />
-    <input type="hidden" name="_target_path" value="/account" />
-    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-    <button type="submit">login</button>
-</form>
+<nav class="category__choices">
+    <div><</div>
+    <div>vlog</div>
+    <div>comedy</div>
+    <div>lifestyle</div>
+    <div>art</div>
+    <div>photography</div>
+    <div>gaming</div>
+    <div>sciences</div>
+    <div>politics</div>
+    <div>cute</div>
+    <div>vape</div>
+    <div>make-up</div>
+    <div>education</div>
+    <div>></div>
+</nav>
+
+<div class="feed">
+    <div class="feed__side">
+        <div class="feed__sideFeatured">
+            <div class="featured__navbar">
+                <div class="featured__navbar--title">Cyprien</div>
+                <div class="featured__navbar--text">FEATURED</div>
+            </div>
+                <div class="featured__navbar--subtitle">La puissance des mots</div>
+            <div class="featured__content"></div>
+        </div>
+        <div class="feed__sideRandom">
+            <div class="random__content">GO RANDOM</div>
+        </div>
+        <div class="feed__sideFollow">
+            <div class="follow__title">FOLLOW THEM</div>
+
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+
+
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+
+        </div>
+        <div class="feed__sidePopular">
+            <div class="popular__title">POPULAR</div>
+            <div class="popular__date">
+                <div class="popular__dateInfo">day</div>
+                <div class="popular__dateInfo">week</div>
+                <div class="popular__dateInfo">month</div>
+                <div class="popular__dateInfo">year</div>
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <div class="feed__central">
+        <div class="feed__centralHead">
+            <div class="head__text">HOT</div>
+            <div class="head__text">NEW</div>
+            <div class="head__text">DISCOVER</div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<div class="feed__side">
+    <input type="button" class="button_create" value="CREATE A POST">
+    <div class="feed__sideRight">
+    	<div class="right_text">
+    		<div class="text_title">Sign in</div>
+    		<div class="text_description">Connect in order to share videos, write scomments and explore fully!</div>
+    	</div>
+		<form action="{{ path('login') }}" method="post">
+		<div class="right_username">
+		    <label for="username"></label>
+		    <input type="text" placeholder="username" id="username" name="_username" value="{{ last_username }}" class="username_input" />
+		</div>
+
+		<div class="right_password">
+			
+		    <label for="password"></label>
+		    <input type="password" id="password" name="_password" placeholder="password" class="password_input"/>
+		</div>
+		    <input type="hidden" name="_target_path" value="/account" />
+		    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+		<div class="right_password">
+		    <button type="submit" class="password__signup">SIGN UP</button>
+		    <button type="submit" class="password__signin">SIGN IN</button>
+		</div>
+		<div class="right_forgot">
+			<button class="forgot__password" type="submit">forgot your password ?</div>
+		</div>
+		</form>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
