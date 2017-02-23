@@ -134,6 +134,11 @@ html
   justify-content: space-between;
 }
 
+.feed__central div
+{
+  margin-bottom: 10px;
+}
+
 .feed__centralHead
 {
   display: flex;

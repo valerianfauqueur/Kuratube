@@ -54,9 +54,9 @@
 <div class="feed__centralMain">
     
     <div class="feed__centralTitle">
-        <div class="title_text">Fun french gameplay</div>
-        <div class="title_author">posted by Kzo_20</div>
-        <div class="title_time">20 min ago</div>
+        <div class="title_text">{{ post.title }}</div>
+        <div class="title_author">posted by {{ post.author.username }}</div>
+        <div class="title_time">{{ post.createdAt|ago }}</div>
     </div>
 
 <div class="feed__centralVideo"></div>
@@ -65,16 +65,16 @@
     <div class="feed__videoInfo">
         <div class="video_titleCategory">
             <div class="video_title">MON RETOUR SUR BLACKOPS</div>
-            <div class="video_category">GAMING</div>
+            <div class="video_category">{{ post.category }}</div>
         </div>
         <div class="video_authorSubscribers">
             <div class="video_author">Squeezie</div>
             <div class="video_subscribers">2 394 384 subscribers</div>
         </div>
         <div class="video_hashtags">
-            <div class="hashtag first_hashtag">#funny</div>
-            <div class="hashtag second_hashtag">#french</div>
-            <div class="hashtag third_hashtag">#gameplay</div>
+            {% for tag in post.tags %}
+                <div class="hashtag first_hashtag">#{{ tag }}</div>
+            {% endfor %}
         </div>
     </div>
     <div class="feed__descriptionBuzz">
@@ -83,27 +83,17 @@
             <div class="video_arrowUp">⬆️️</div>
             <div class="video_arrowDown">⬇️️</div>
         </div>
-            <div class="video_arrowPoints">1291 Points</div>
+            <div class="video_arrowPoints">{{ post.points }} points</div>
     </div>
 </div>
-    <div class="feed__videoText">
-    Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science.
-    To start with, let’s discuss the three major kinds of telescopes and then lay down some “Telescope 101″ concepts to increase your chances that you will buy the right thing.        
-    </div>
+    <div class="feed__videoText">{{ post.content }}</div>
 </div>
     <div class="form_comment">
-            <form>
-                <input class="comment_bar" type="text" name="searchbar" placeholder="Write a comment…">
-                <input class="comment_button" type="submit" value="Post">
-            </form>
+        {% include ':post/comment:new.html.twig' %}
     </div>
-    <div class="posted_comment">
-        <div class="posted_author">Bétédoublevé</div>
-        <div class="posted_content">
-            <div class="posted_text">wooooow, i loved so much squeezie. because im french tbh :DDDD</div>
-            <div class="posted_time">20 min ago</div>
-        </div>
-    </div>
+    {% for comment in post.comments %}
+        {% include ':post/comment:show.html.twig' with {'comment': comment} %}
+    {% endfor %}
 </div>
 <div class="feed__side">
     <input type="button" class="button_create" value="CREATE A POST">
@@ -132,34 +122,4 @@
     </div>
 </div>
 </div>
-<!--     <h1>Post</h1>
-
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ post.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ post.title }}</td>
-            </tr>
-            <tr>
-                <th>Content</th>
-                <td>{{ post.content }}</td>
-            </tr>
-            <tr>
-                <th>Points</th>
-                <td>{{ post.points }}</td>
-            </tr>
-            <tr>
-                <th>Channel</th>
-                <td>{{ post.channel }}</td>
-            </tr>
-        </tbody>
-    </table>
-    {% include ':post/comment:new.html.twig' %}
-    {% for comment in post.comments %}
-        {% include ':post/comment:show.html.twig' with {'comment': comment} %}
-    {% endfor %} -->
 {% endblock %}

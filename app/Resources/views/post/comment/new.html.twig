@@ -1,6 +1,8 @@
-<div class="comment__form">
+<div class="form_comment">
     {{ form_start(comment_form) }}
-    {{ form_widget(comment_form) }}
-    <input type="submit" value="Create" />
+    {% spaceless %}
+    {{ form_row(comment_form.comment) }}
+    {% endspaceless %}
+    <input class="comment_button" type="submit" value="Post" />
     {{ form_end(comment_form) }}
 </div>

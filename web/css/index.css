@@ -340,9 +340,13 @@ html
 {
 	margin-right: 0.3125rem;
 }
-
+.linkto__post {
+	text-decoration: none;
+	color: black;
+}
 .feed__centralPost
 {
+	text-decoration: none;
 	display: flex;
 	flex-direction: row;
 	margin-top: 0.625rem;
@@ -359,37 +363,42 @@ html
 
 .post__text
 {
-
+	text-decoration: none;
 	width: 100%;
 	padding-left: 0.652rem;
 }
 
 .post__textCategory
 {
+	text-decoration: none;
 	font-size: 1.125rem;
 	padding-top: 0.1875rem;
 }
 
 .post__textTitle
 {
+	text-decoration: none;
 	font-size: 0.875rem;
 	padding-top: 0.1875rem;
 }
 
 .post__textProfile
 {
+	text-decoration: none;
 	display: flex;
 	flex-direction: row;
 }
 
 .profile__name
 {
+	text-decoration: none;
 	font-size: 0.875rem;
 	padding-top: 0.1875rem;
 }
 
 .profile__subscribers
 {
+
 	font-size: 0.75rem;
 	padding-top: 0.1875rem;
 	padding-left: 0.625rem;
@@ -399,6 +408,11 @@ html
 {
 	font-size: 0.75rem;
 	padding-top: 0.1875rem;
+}
+
+.post__textTags li {
+	display: inline-block;
+	margin-left:5px;
 }
 
 .post__textInfos

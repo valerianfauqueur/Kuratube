@@ -5,19 +5,6 @@
 {% endblock %}
 
 {% block body %}
-    <h1>Post creation</h1>
-
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('post_index') }}">Back to the list</a>
-        </li>
-    </ul>
-
 <div class="color__choices">
             <div class="color__choicesInput color__choicesInput--blue"></div>
             <div class="color__choicesInput color__choicesInput--purple"></div>
@@ -47,25 +34,13 @@
             <div class="head__text">NEW POST</div>
         </div>
         <div class="feed__centralFill">
-            <input type="text" placeholder="Give your post a title" class="fill__title">
-            <input type="text" placeholder="Paste here the video's url" class="fill__url">
-            <div class="fill__content">
-                <div class="fill__contentVideo"></div>
-                <div class="fill__contentArtist">
-                    <div class="artist__title">LA FIGURINE QUI COUTAIT 300€</div>
-                    <div class="artist__views">2 944 506 views</div>
-                    <div class="artist__name">Squeezie</div>
-                    <div class="artist__subs">7 727 239 subscribers</div>
-                </div>
-            </div>
-            <input type="text" placeholder="Tell us more about this video !" class="fill__description">
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
         </div>
     </div>
     <div class="feed__side">
-        <button class="feed__sideShare">SHARE POST</button>
-        <div class="feed__sideCategory">My category ^^ </div>
-        <div class="feed__sideTags">Tags</div>
-        <button class="feed__sideDelete">Delete this post</button>
+        <input class="feed__sideShare" type="submit" value="SHARE POST" />
+        {{ form_end(form) }}
     </div>
 </div>
 </body>

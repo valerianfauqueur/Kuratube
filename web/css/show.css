@@ -297,13 +297,15 @@ html
 	display: flex;
 	flex-direction: row;
 	margin-top: 10px;
-	height: 90px;
+	height: 110px;
 	width: 750px;
-	width: 100%;
 	background-color:white;
-	border: 2px solid #2196F3;
+	margin-bottom:10px;
 }
-
+.form_comment div {
+	height:0;
+	width:0;
+}
 
 .comment_bar
 { 
@@ -311,8 +313,10 @@ html
 	padding-left: 10px;
 	max-height: 77px;
 	min-height: 40px;
-	width: 500px;
-
+	width: 730px;
+	height:90%;
+	position: relative;
+	bottom: 7px;
 }
 
 .comment_button

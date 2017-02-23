@@ -1,5 +1,7 @@
-<div class="comment">
-    <div class="author">{{ comment.author.username }}</div>
-    <p>{{ comment.comment }}</p>
-    <a data-method="delete" href="{{ path('comment_delete', { 'postId': post.id, 'commentId': comment.id }) }}" >Suppr</a>
+<div class="posted_comment">
+    <div class="posted_author">{{ comment.author.username }}</div>
+    <div class="posted_content">
+        <div class="posted_text">{{ comment.comment }}</div>
+        <div class="posted_time">{{ comment.createdAt|ago }}</div>
+    </div>
 </div>

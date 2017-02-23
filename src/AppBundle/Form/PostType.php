@@ -16,17 +16,28 @@ class PostType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')
-                ->add('content', TextareaType::class)
-                ->add('video', 'text', array('attr' => array('placeholder' => 'Enter a Youtube link'), 'label' => false,))
-                ->add('channel')
+        $builder
+                ->add('title', 'text', array(
+                    'label' => false,
+                    'attr' => array('class' => 'fill__title', 'placeholder' => 'Give your post a title'),
+                ))
+                ->add('video', 'text', array('attr' => array('placeholder' => 'Enter a Youtube link', 'class' => 'fill__url'), 'label' => false,))
+                ->add('content', TextareaType::class, array(
+                    'label' => false,
+                    'attr' => array('class' => 'fill__description', 'placeholder' => 'Tell us more about this video!'),
+                ))
+                ->add('channel', 'text', array(
+                    'label' => false,
+                    'attr' => array('class' => 'fill__url', 'placeholder' => 'Add the youtube channel'),
+                ))
                 ->add('category', EntityType::class, array(
                     'class' => 'AppBundle:Category',
                     'choice_label' => 'name',
                 ))
                 ->add('tags', 'entity', array(
                     'class'     => 'AppBundle:Tag',
-                    'multiple'  => true
+                    'multiple'  => true,
+                    'label' => 'Add some tags to your post',
                 ));
     }
     
