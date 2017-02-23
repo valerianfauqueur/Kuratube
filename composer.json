@@ -23,7 +23,8 @@
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
         "sonata-project/admin-bundle": "^3.13",
-        "sonata-project/doctrine-orm-admin-bundle": "^3.1"
+        "sonata-project/doctrine-orm-admin-bundle": "^3.1",
+        "knplabs/knp-time-bundle": "^1.7"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
