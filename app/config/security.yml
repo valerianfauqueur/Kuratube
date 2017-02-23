@@ -4,11 +4,20 @@ security:
     encoders:
         AppBundle\Entity\User:
             algorithm: bcrypt
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
 
     # http://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
+        chain_provider:
+            chain:
+                providers: [in_memory, our_db_provider]
         in_memory:
-            memory: ~
+            memory:
+                users:
+                    admin:
+                      password: $2y$13$7W7FXm4hVn7Vg7NvVggaheHYmP5to0nIXiE/0Pb4GY1OXhM0MaMmq
+                      roles: 'ROLE_ADMIN'
         our_db_provider:
             entity:
                 class: AppBundle:User
@@ -25,12 +34,12 @@ security:
             form_login:
                 login_path: login
                 check_path: login
-                provider: our_db_provider
+                provider: chain_provider
                 csrf_token_generator: security.csrf.token_manager
             logout:
                 path:   /logout
                 target: /post
 
     access_control:
-        # require ROLE_ADMIN for /post/new
         - { path: ^/post/new, roles: ROLE_USER }
+        - { path: ^/admin, roles: ROLE_ADMIN }
