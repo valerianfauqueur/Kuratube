@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/new.css') }}" />
+{% endblock %}
+
 {% block body %}
     <h1>Post creation</h1>
 
@@ -13,4 +17,57 @@
             <a href="{{ path('post_index') }}">Back to the list</a>
         </li>
     </ul>
+
+<div class="color__choices">
+            <div class="color__choicesInput color__choicesInput--blue"></div>
+            <div class="color__choicesInput color__choicesInput--purple"></div>
+            <div class="color__choicesInput color__choicesInput--green"></div>
+            <div class="color__choicesInput color__choicesInput--orange"></div>
+            <div class="color__choicesInput color__choicesInput--red"></div>
+            <div class="color__choicesText">change theme</div>
+    </div>
+    <div class="container_header">
+        <div class="logo logo_position"></div>
+        <div class="form">
+            <form class="form_position">
+                <input class="form_bar" type="text" name="searchbar" placeholder="Discover your new favorite youtuber…">
+                <input class="form_button" type="submit" value="SEARCH">
+            </form>
+        </div>
+        <div class="text_online">1826 online</div>
+    </div>
+</head>
+<body>
+
+
+
+<div class="feed">
+    <div class="feed__central">
+        <div class="feed__centralHead">
+            <div class="head__text">NEW POST</div>
+        </div>
+        <div class="feed__centralFill">
+            <input type="text" placeholder="Give your post a title" class="fill__title">
+            <input type="text" placeholder="Paste here the video's url" class="fill__url">
+            <div class="fill__content">
+                <div class="fill__contentVideo"></div>
+                <div class="fill__contentArtist">
+                    <div class="artist__title">LA FIGURINE QUI COUTAIT 300€</div>
+                    <div class="artist__views">2 944 506 views</div>
+                    <div class="artist__name">Squeezie</div>
+                    <div class="artist__subs">7 727 239 subscribers</div>
+                </div>
+            </div>
+            <input type="text" placeholder="Tell us more about this video !" class="fill__description">
+        </div>
+    </div>
+    <div class="feed__side">
+        <button class="feed__sideShare">SHARE POST</button>
+        <div class="feed__sideCategory">My category ^^ </div>
+        <div class="feed__sideTags">Tags</div>
+        <button class="feed__sideDelete">Delete this post</button>
+    </div>
+</div>
+</body>
+
 {% endblock %}
