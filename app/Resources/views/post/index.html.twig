@@ -1,46 +1,302 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Posts list</h1>
+<div class="color__choices">
+            <div class="color__choicesInput color__choicesInput--blue"></div>
+            <div class="color__choicesInput color__choicesInput--purple"></div>
+            <div class="color__choicesInput color__choicesInput--green"></div>
+            <div class="color__choicesInput color__choicesInput--orange"></div>
+            <div class="color__choicesInput color__choicesInput--red"></div>
+            <div class="color__choicesText">change theme</div>
+    </div>
+    <div class="container_header">
+        <div class="logo logo_position"></div>
+        <div class="form">
+            <form class="form_position">
+                <input class="form_bar" type="text" name="searchbar" placeholder="Discover your new favorite youtuber…">
+                <input class="form_button" type="submit" value="SEARCH">
+            </form>
+        </div>
+        <div class="text_online">1826 online</div>
+    </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Author</th>
-                <th>Points</th>
-                <th>Channel</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for post in posts %}
-            <tr>
-                <td><a href="{{ path('post_show', { 'id': post.id }) }}">{{ post.id }}</a></td>
-                <td>{{ post.title }}</td>
-                <td>{{ post.content }}</td>
-                <td>{{ post.points }}</td>
-                <td>{{ post.channel }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('post_show', { 'id': post.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('post_edit', { 'id': post.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<nav class="category__choices">
+    <div><</div>
+    <div>vlog</div>
+    <div>comedy</div>
+    <div>lifestyle</div>
+    <div>art</div>
+    <div>photography</div>
+    <div>gaming</div>
+    <div>sciences</div>
+    <div>politics</div>
+    <div>cute</div>
+    <div>vape</div>
+    <div>make-up</div>
+    <div>education</div>
+    <div>></div>
+</nav>
 
-    <ul>
-        <li>
-            <a href="{{ path('post_new') }}">Create a new post</a>
-        </li>
-    </ul>
+<div class="feed">
+    <div class="feed__side">
+        <div class="feed__sideFeatured">
+            <div class="featured__navbar">
+                <div class="featured__navbar--title">Cyprien</div>
+                <div class="featured__navbar--text">FEATURED</div>
+            </div>
+                <div class="featured__navbar--subtitle">La puissance des mots</div>
+            <div class="featured__content"></div>
+        </div>
+        <div class="feed__sideRandom">
+            <div class="random__content">GO RANDOM</div>
+        </div>
+        <div class="feed__sideFollow">
+            <div class="follow__title">FOLLOW THEM</div>
+
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+
+
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+            <div class="follow__profile">
+                <div class="follow__profileImage"></div>
+                <div class="follow__profileDescription">
+                    <div class="description__name">Anthony Chevalin</div>
+                    <div class="description__info">
+                        <div class="description__infoCountry"></div>
+                        <div class="description__infoFollowers">263 followers</div>
+                    </div>
+                </div>
+                <div class="follow__profileAdd">+</div>
+            </div>
+
+        </div>
+        <div class="feed__sidePopular">
+            <div class="popular__title">POPULAR</div>
+            <div class="popular__date">
+                <div class="popular__dateInfo">day</div>
+                <div class="popular__dateInfo">week</div>
+                <div class="popular__dateInfo">month</div>
+                <div class="popular__dateInfo">year</div>
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+            </div>
+            <div class="popular__post">
+                <div class="popular__postImage"></div>
+                <div class="popular__postText">
+                    <div class="popular__postText--title">why i decided to quit</div>
+                    <div class="popular__postText--number"> 714</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="feed__central">
+        <div class="feed__centralHead">
+            <div class="head__text">HOT</div>
+            <div class="head__text">NEW</div>
+            <div class="head__text">DISCOVER</div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="feed__centralPost">
+            <div class="post__image"></div>
+            <div class="post__text">
+                <div class="post__textCategory">Fun french gameplay</div>
+                <div class="post__textTitle">MON RETOUR SUR BLACKOPS</div>
+                <div class="post__textProfile">
+                    <div class="profile__name">Squeezie</div>
+                    <div class="profile__subscribers">2 394 394 subscribers</div>
+                </div>
+                <div class="post__textTags">#funny #french #gameplay</div>
+                <div class="post__textInfos">
+                    <div class="infos__poster">posted by Kzo-20</div>
+                    <div class="infos__time">20 min ago</div>
+                    <div class="infos__type">GAMING</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="feed__perso">
+        <div class="feed__persoCreate"></div>
+        <div class="feed__persoUser">
+            <div class="user__description">
+                <div class="user__descriptionImage">
+
+                <div class="user__descriptionDetails">
+                    <div class="details__user">
+                        <div class="details__userName">Axel</div>
+                        <div class="details__userFollowers">72 followers</div>
+                    </div>
+                    <div class="details__description">Watches addict, vape nation, friend of the leo loriol.</div>
+                </div>
+                <div class="user__descriptionFollowimage"></div>
+              </div>
+                <div class="user__interests">
+                    <div class="user__interestsFollowed">You recently followed Phillipe, Laura and Patrick.</div>
+                    <div class="user__interestsLiked">Last post you liked : A french comedian by Laura.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}

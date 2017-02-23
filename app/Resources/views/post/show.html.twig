@@ -1,6 +1,137 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+<link rel="stylesheet" href="{{ asset('css/show.css') }}" />
+{% endblock %}
 {% block body %}
+<div class="color__choices">
+            <div class="color__choicesInput color__choicesInput--blue"></div>
+            <div class="color__choicesInput color__choicesInput--purple"></div>
+            <div class="color__choicesInput color__choicesInput--green"></div>
+            <div class="color__choicesInput color__choicesInput--orange"></div>
+            <div class="color__choicesInput color__choicesInput--red"></div>
+            <div class="color__choicesText">change theme</div>
+    </div>
+    <div class="container_header">
+        <div class="logo logo_position"></div>
+        <div class="form">
+            <form class="form_position">
+                <input class="form_bar" type="text" name="searchbar" placeholder="Discover your new favorite youtuber…">
+                <input class="form_button" type="submit" value="SEARCH">
+            </form>
+        </div>
+        <div class="text_online">1826 online</div>
+    </div>
+
+<nav class="category__choices">
+    <div><</div>
+    <div>vlog</div>
+    <div>comedy</div>
+    <div>lifestyle</div>
+    <div>art</div>
+    <div>photography</div>
+    <div>gaming</div>
+    <div>sciences</div>
+    <div>politics</div>
+    <div>cute</div>
+    <div>vape</div>
+    <div>make-up</div>
+    <div>education</div>
+    <div>></div>
+</nav>
+
+<div class="feed__global">
+    
+<div class="feed__central">
+<div class="feed__centralHeader">
+    <div class="feed__centralHead">HOT</div>
+</div>
+
+<div class="feed__centralPreviousNext">
+    <div class="feed__centralPost">Previous post</div>
+    <div class="feed__centralNext">Next post</div>
+</div>
+
+<div class="feed__centralMain">
+    
+    <div class="feed__centralTitle">
+        <div class="title_text">Fun french gameplay</div>
+        <div class="title_author">posted by Kzo_20</div>
+        <div class="title_time">20 min ago</div>
+    </div>
+
+<div class="feed__centralVideo"></div>
+
+<div class="feed__videoDescription">
+    <div class="feed__videoInfo">
+        <div class="video_titleCategory">
+            <div class="video_title">MON RETOUR SUR BLACKOPS</div>
+            <div class="video_category">GAMING</div>
+        </div>
+        <div class="video_authorSubscribers">
+            <div class="video_author">Squeezie</div>
+            <div class="video_subscribers">2 394 384 subscribers</div>
+        </div>
+        <div class="video_hashtags">
+            <div class="hashtag first_hashtag">#funny</div>
+            <div class="hashtag second_hashtag">#french</div>
+            <div class="hashtag third_hashtag">#gameplay</div>
+        </div>
+    </div>
+    <div class="feed__descriptionBuzz">
+        
+        <div class="feed__videoBuzz">
+            <div class="video_arrowUp">Up</div>
+            <div class="video_arrowDown">Down</div>
+        </div>
+            <div class="video_arrowPoints">1291 Points</div>
+    </div>
+</div>
+    <div class="feed__videoText">
+    Buying the right telescope to take your love of astronomy to the next level is a big next step in the development of your passion for the stars. In many ways, it is a big step from someone who is just fooling around with astronomy to a serious student of the science.
+    To start with, let’s discuss the three major kinds of telescopes and then lay down some “Telescope 101″ concepts to increase your chances that you will buy the right thing.        
+    </div>
+</div>
+    <div class="form_comment">
+            <form>
+                <input class="comment_bar" type="text" name="searchbar" placeholder="Write a comment…">
+                <input class="comment_button" type="submit" value="Post">
+            </form>
+    </div>
+    <div class="posted_comment">
+        <div class="posted_author">Bétédoublevé</div>
+        <div class="posted_content">
+            <div class="posted_text">wooooow, i loved so much squeezie. because im french tbh :DDDD</div>
+            <div class="posted_time">20 min ago</div>
+        </div>
+    </div>
+</div>
+<div class="feed__side">
+    <input type="button" class="button_create" value="CREATE A POST"></div>
+    <div class="feed__perso">
+        <div class="feed__persoCreate"></div>
+        <div class="feed__persoUser">
+            <div class="user__description">
+                <div class="user__descriptionImage">
+
+                <div class="user__descriptionDetails">
+                    <div class="details__user">
+                        <div class="details__userName">Axel</div>
+                        <div class="details__userFollowers">72 followers</div>
+                    </div>
+                    <div class="details__description">Watches addict, vape nation, friend of the leo loriol.</div>
+                </div>
+                <div class="user__descriptionFollowimage"></div>
+              </div>
+                <div class="user__interests">
+                    <div class="user__interestsFollowed">You recently followed Phillipe, Laura and Patrick.</div>
+                    <div class="user__interestsLiked">Last post you liked : A french comedian by Laura.</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
     <h1>Post</h1>
 
     <table>

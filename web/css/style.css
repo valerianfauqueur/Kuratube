@@ -1,0 +1,500 @@
+
+html
+{
+	width: 100vw;
+	max-width: 1080px;
+	margin: auto;
+}
+/* HEADER */
+
+/* FIRST ROW */
+
+.color__choices
+{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.color__choicesInput
+{
+	width: 0.65vw;
+	height: 0.65vw;
+	margin-right: 0.625rem;
+	margin-top: 0.625rem;
+
+}
+
+
+.color__choicesInput--blue
+{
+	background-color: blue;
+}
+
+.color__choicesInput--purple
+{
+	background-color: purple;
+}
+
+.color__choicesInput--green
+{
+	background-color: green;
+}
+
+.color__choicesInput--orange
+{
+	background-color: orange;
+}
+
+.color__choicesInput--red
+{
+	background-color: red;
+}
+
+.color__choicesText
+{
+	margin-top: 0.375rem;
+	margin-left: 2.125rem;
+}
+
+/* SECOND ROW */
+
+.logo
+{
+	height: 6.59vw;
+	width: 2.63vw;
+	background-color: black;
+}
+
+.container_header
+{
+	display: flex;
+	justify-content: space-between;
+}
+
+.form
+{
+	align-self: flex-end;
+}
+
+.form_position
+{
+}
+
+.form_bar
+{
+	width: 27.7vw;
+	height: 1.7vw;
+}
+
+.form_button
+{
+	background-color: black;
+	color: white;
+	border: 0rem;
+	width: 7.26vw;
+	height: 2.11vw;
+	cursor: pointer;
+}
+
+.text_online
+{
+	align-self: flex-end;
+}
+
+/* BODY */
+
+/* CATEGORY */
+
+.category__choices
+{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 1.25rem;
+}
+
+/* FEED */
+
+.feed
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	margin-top: 1.25rem;
+	width: 100%;
+
+}
+
+/* LEFT COLUMN */
+
+
+.feed__side
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 49.9vw;
+	width: 100%;
+	max-width: 13.18vw;
+}
+
+/* FIRST BLOCK */
+
+.feed__sideFeatured
+{
+	width: 100%;
+}
+
+.featured__navbar
+{
+	display: flex;
+	flex-direction: row;
+	background-color: grey;
+	width: 100%;
+}
+
+.featured__navbar--title
+{
+	padding-left: 0.1875rem;
+	padding-top: 0.1875rem;
+	padding-right: 3.75rem;
+}
+
+.featured__navbar--text
+{
+	padding-right: 0.1875rem;
+	padding-top: 0.1875rem;
+}
+
+.featured__navbar--subtitle
+{
+	background-color: grey;
+	padding-bottom: 0.1875rem;
+	padding-left: 0.1875rem;
+}
+
+.featured__content
+{
+	background-color: lightgrey;
+	height: 7.392vw;
+}
+
+/* SECOND BLOCK */
+
+.feed__sideRandom
+{
+	display: flex;
+	width: 100%;
+	height: 7.392vw;
+	background-color: lightgrey;
+}
+
+.random__content
+{
+	margin: auto;
+}
+
+/* THIRD BLOCK */
+
+.feed__sideFollow
+{
+	width: 100%;
+	height: 15.44vw;
+	background-color: grey;
+}
+
+.follow__title
+{
+	margin-top: 0.3125rem;
+	margin-left: 0.3125rem;
+	margin-bottom: 0.5625rem;
+}
+
+.follow__profile
+{
+	display: flex;
+	flex-direction: row;
+	margin-top: 0.3125rem;
+}
+
+.follow__profileImage
+{
+	width: 1.98vw;
+	height: 1.98vw;
+	background-color: lightgrey;
+	margin-left: 0.1875rem;
+}
+
+.follow__profileDescription
+{
+	display: flex;
+	flex-direction: column;
+}
+
+.follow__profileAdd
+{
+	font-size: 1.875rem;
+	margin-left: 1.25rem;
+}
+
+.description__name
+{
+	font-size: 0.875rem;
+	margin-left: 0.5625rem;
+}
+
+.description__info
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.description__infoCountry
+{
+	width: 0.858vw;
+	height: 0.924vw;
+	background-color: lightgrey;
+	margin-left: 0.5625rem;
+}
+
+.description__infoFollowers
+{
+	margin-left: 0.625rem;
+	font-size: 0.75rem;
+}
+
+/* FOURTH BLOCK */
+
+.feed__sidePopular
+{
+	width: 100%;
+	height: 15.44vw;
+	background-color: grey;
+}
+
+.popular__title
+{
+
+}
+
+.popular__date
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.popular__dateInfo
+{
+	margin:auto;
+}
+
+.popular__post
+{
+	display: flex;
+	flex-direction: row;
+	margin-top: 0.1875rem;
+}
+
+.popular__postImage
+{
+	margin-top: 0.3125rem;
+	width: 2.63vw;
+	height: 1.584vw;
+	background-color: lightgrey;
+	margin-left: 0.1875rem;
+}
+
+.popular__postText
+{
+	display: flex;
+	flex-direction: column;
+	margin-top: 0.1875rem;
+	margin-left: 0.625rem;
+}
+
+.popular__postText--title
+{
+	font-size: 0.75rem;
+
+}
+
+.popular__postText--number
+{
+	font-size: 0.75rem;
+}
+
+/* MAIN COLUMN */
+
+.feed__central
+{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 34.98vw;
+	margin-left: 1.25rem;
+}
+
+.feed__centralHead
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.head__text
+{
+	margin-right: 0.3125rem;
+}
+
+.feed__centralPost
+{
+	display: flex;
+	flex-direction: row;
+	margin-top: 0.625rem;
+}
+
+.post__image
+{
+	width: 13.2vw;
+	height: 7.392vw;
+	background-color: grey;
+}
+
+.post__text
+{
+
+	width: 100%;
+	height: 7.392vw;
+	background-color: lightgrey;
+	padding-left: 0.652rem;
+}
+
+.post__textCategory
+{
+	font-size: 1.125rem;
+	padding-top: 0.1875rem;
+}
+
+.post__textTitle
+{
+	font-size: 0.875rem;
+	padding-top: 0.1875rem;
+}
+
+.post__textProfile
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.profile__name
+{
+	font-size: 0.875rem;
+	padding-top: 0.1875rem;
+}
+
+.profile__subscribers
+{
+	font-size: 0.75rem;
+	padding-top: 0.1875rem;
+	padding-left: 0.625rem;
+}
+
+.post__textTags
+{
+	font-size: 0.75rem;
+	padding-top: 0.1875rem;
+}
+
+.post__textInfos
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.infos__poster
+{
+	font-size: 0.75rem;
+	padding-top: 0.1875rem;
+}
+
+.infos__time
+{
+	font-size: 0.75rem;
+	padding-top: 0.1875rem;
+	padding-left: 0.625rem;
+}
+
+.infos__type
+{
+	font-size: 0.875rem;
+	padding-top: 0.1875rem;
+	padding-left: 6.875rem;
+}
+
+/* RIGHT COLUMN */
+
+.feed__perso
+{
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 26.73vw;
+	height: 100%;
+	background-color: lightgrey;
+	margin-left: 1.25rem;
+}
+
+.user__descriptionImage
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.user__descriptionDetails
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.details__user
+{
+	display: flex;
+	flex-direction: row;
+}
+
+.details__userName
+{
+	margin-left: 0.1875rem;
+	margin-top: 0.1875rem;
+}
+
+.details__userFollowers
+{
+	margin-left: 0.625rem;
+	margin-top: 0.1875rem;
+}
+
+.user__descriptionFollowimage
+{
+	height: 4.62vw;
+	width: 4.62vw;
+	background-color: grey;
+}
+
+.user__interests
+{
+	display: flex;
+	flex-direction: column;
+	margin-top: 1.25rem;
+}
+
+.details__description
+{
+	margin-left: 0.1875rem;
+}
+
+.user__interests
+{
+	margin-left: 0.1875rem;
+}
