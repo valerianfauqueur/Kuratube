@@ -1,6 +1,9 @@
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+homepage:
+    path: /
+    defaults:  { _controller: AppBundle:Post:index }
 user_registration:
     path: /register
     defaults: { _controller: AppBundle:Registration:register }
