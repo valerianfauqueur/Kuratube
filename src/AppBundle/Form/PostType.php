@@ -18,6 +18,7 @@ class PostType extends AbstractType
     {
         $builder->add('title')
                 ->add('content', TextareaType::class)
+                ->add('video', 'text', array('attr' => array('placeholder' => 'Enter a Youtube link'), 'label' => false,))
                 ->add('channel')
                 ->add('category', EntityType::class, array(
                     'class' => 'AppBundle:Category',
